@@ -1,3 +1,6 @@
+# Project Structure
+
+```text
 49.1 phase 4/
 ├── main.py
 ├── config.py
@@ -81,7 +84,13 @@
 │   ├── models_h24/
 │   ├── models_h48/
 │   ├── models_meta_dryrun/
-│   └── 7 JSON files for state and history
+│   ├── circuit_breaker_state.json
+│   ├── equity_curve.json
+│   ├── equity_tracker.json
+│   ├── open_positions.json
+│   ├── senator_weights.json
+│   ├── trade_history.json
+│   └── wallet.json
 └── log/
     ├── feature_isolation/
     ├── hmm_walkforward/
@@ -93,3 +102,6 @@
     ├── senate/
     ├── senate_transcripts/
     └── application run logs
+```
+
+Generated files inside `data/` and `log/`, as well as `__pycache__/` directories, are omitted for readability.
