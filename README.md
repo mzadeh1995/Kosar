@@ -9,6 +9,8 @@ What It Contains:
 •	150 passing tests.
 •	Written entirely with AI. I do not know how to write even a single line of code.
 
+[View the project structure](PROJECT_STRUCTURE.md)
+
 How the Project Took Shape and Evolved
 v1 to v30:
 From version 1 to version 30, I wrote the code using a combination of ChatGPT 4.5 and Gemini 2. Gemini was a weak programmer. As the codebase grew, it would summarize or delete parts of the existing code to optimize its output and manage its context window.
