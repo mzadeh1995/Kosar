@@ -22,14 +22,11 @@ Some time later, I saw promotions for Codex inside ChatGPT and installed it. I h
 Research that took perhaps no more than 30 minutes saved me a great deal of money and time. Most of the time, its findings were accurate, too.
 I had previously researched Cursor and its competitor this way and found widespread dissatisfaction with them, so I had decided against using them. But when I saw the promotions for Codex, I installed it because I had already used ChatGPT and been satisfied with it, and because I knew the company took a more economical approach.
 The quality of the code improved yet again. Codex could now edit just the individual lines that needed changing, instead of rewriting the entire file.
-
 Identifying the Problem and Addressing Its Root Cause
 I had reached version 30, and the code was running in paper-trading mode on a server when I noticed that its performance was flat. It was neither making money nor losing it. I gave the code to Gemini Deep Research and asked it to critique it with complete honesty and absolutely no mercy. I asked it to compare the code with the architectures used by today’s major hedge funds, give it a score out of 20, and identify what I needed to add or remove to make it profitable.
-
 The Results Came In
 Gemini Deep Research gave my code a score of 4 out of 20. It was shocking, but it did not scare me. The biggest flaw was that I had put LLMs in charge of trading decisions. Gemini told me that major hedge funds use machine learning to predict market movements, while LLMs serve only to analyze sentiment.
 Its other recommendations included adding meta-labeling, with XGBoost as the primary model and CatBoost as the secondary model; using the triple barrier method for model training; incorporating fractional differentiation into the features; adding an HMM to detect market regimes; adding OFI and VPIN; introducing a calibration layer; and several other improvements.
-
 A Slap in the Face
 Gemini’s report was asking me to smash all my idols, like the Prophet Abraham. Things that brought me neither benefit nor harm. A pile of stones and sticks I had gathered around myself. All the time I had wasted getting to version 30.
 I had built an AI Senate consisting of 12 different AI systems, each independently analyzing the market. They voted. They held debates and tried to persuade one another by presenting arguments for and against. This happened in three stages: first, independent opinions; then, arguments from those in favor, those opposed, and those abstaining; and finally, another round of voting.
@@ -40,7 +37,6 @@ It was harsh criticism, but I did not feel sad. I immediately started making cha
 Machine learning learned from the past: if conditions Y had caused the price to rise X times, there was a probability Z that it would happen again. An LLM, however, was merely predicting the next sentences. Like a fortune-teller. With nothing to back it up.
 So I decided to set LLMs aside for the time being, until I could use them where they belonged and where their strengths lay: sentiment analysis.
 (This is why you can still see remnants of that system in the code on GitHub, especially in Senate.py.)
-
 Beginning to Smash the Idols
 After temporarily retiring the LLMs, I decided to implement the items on Gemini’s hedge fund architecture checklist one by one. I started with HMM.
 By then, ChatGPT had taken on the role of writing prompts, while Codex received those prompts and wrote the code. After a while, I began to feel that the two of them were not up to the task. The codebase grew far beyond what seemed reasonable, and I felt that something was wrong.
@@ -69,7 +65,6 @@ The results showed remarkably strong—and surprisingly large—improvements. Th
 That reminded me of the first rule of algorithmic trading:
 If the results look exceptionally good, question them first. Celebrate later.
 So I began testing.
-
 Building the Ablation 81 Testing Lab
 I wrote 15,000 lines of code to test the system from different angles: to determine whether it was generating alpha, which features were genuinely useful, and which were merely noise.
 The tests returned an AUC of 0.51—almost equivalent to a coin toss—and delivered this verdict:
@@ -88,13 +83,13 @@ I realized that the problem was not the meta-model. It was the primary model.
 The primary model had been feeding the secondary model noise instead of signals. Because the meta-model could not find a pattern in that noise, it could not improve the results; it simply participated in fewer trades. Avoiding those trades prevented substantial losses, but that did not mean the meta-model was intelligent.
 Now that the market no longer had that steady upward trend, I needed to change the triple barrier training configuration to match the behavior of the 2026 market, using smaller profit targets and shorter time horizons.
 This reminded me of something from my earlier business research: adapting the business model of a successful merchant who lived 1,400 years ago.
-
 The “Ibn 'Awf” Model
 Abd al-Rahman Ibn 'Awf was a very wealthy merchant born in 580 CE in Mecca, in what is now Saudi Arabia. He was among the earliest converts to Islam and, under pressure from its opponents and enemies, migrated from Mecca to Medina with the Prophet Muhammad.
 During this forced migration, he had to leave all his possessions and property behind and arrived in the new city in absolute poverty. Yet within 11 years, he became wealthy again—even wealthier than before, and this time, his wealth lasted.
 What Does This Have to Do with Trading?
 There are several connections. Ibn 'Awf was a traditional merchant. He did exactly what traders do today, just without the internet.
 But my main reason for studying his business model was that he managed to become wealthy twice. To me, this meant that his success was not a matter of luck. He had learned the algorithm for getting rich.
+
 What Was His Business Model?
 Many people in this world are not fortunate enough to become wealthy. According to statistics, 99% of the world’s population will never accumulate $1 million in assets during their lifetime. So if someone manages to do it—and does it twice—their method is worth examining.
 According to Ibn 'Awf himself, he started his business in the new city by selling oil and cheese from a small shop in the market. He explained that he added only a very small markup to his goods. His approach had two advantages.
